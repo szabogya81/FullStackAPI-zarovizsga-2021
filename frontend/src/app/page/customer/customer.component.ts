@@ -9,8 +9,10 @@ import { CustomerService } from 'src/app/service/customer.service';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
+  
+  customers$: Observable<Customer[]> = this.service.getAll();
 
-  constructor() { }
+  constructor(private service: CustomerService) { }
 
   ngOnInit(): void {
   }
